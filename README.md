@@ -5,6 +5,11 @@
   <img src="https://img.shields.io/badge/Dev-NikoSysDev-00f2ff.svg" alt="Author">
   <img src="https://img.shields.io/badge/Tech-GSAP%20%7C%20Vanilla%20JS%20%7C%20AI-ff0055.svg" alt="Tech Stack">
 </p>
+<div align="center">
+  <a href="https://visual-sorting-with-ai.vercel.app/">
+    <img src="https://img.shields.io/badge/PROBAR_APP-CLIC_AQUÍ-6366f1?style=for-the-badge&logo=googlegemini&logoColor=white" alt="Live Demo">
+  </a>
+</div>
 
 **Visual Sorting With AI** es una plataforma de visualización algorítmica de alto impacto que fusiona la lógica computacional con inteligencia artificial contextual. Diseñada bajo una estética **Cyberpunk**, este proyecto no solo ilustra el ordenamiento de datos, sino que ofrece un asistente inteligente que analiza el estado del simulador en tiempo real.
 
