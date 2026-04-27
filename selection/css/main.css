@@ -1,0 +1,149 @@
+/* ── main.css: Arquitectura de Estilos Base ── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
+}
+
+:root {
+  --bg: #0a0a0c;
+  --bg2: #0f0f14;
+  --bg3: #1a1a24;
+  --indigo: #6366f1;
+  --indigo2: #4f46e5;
+  --cyan: #00f2ff;
+  --cyan2: #00c4cc;
+  --rose: #ff0055;
+  --rose2: #cc0044;
+  --txt: #e8e8f0;
+  --muted: #a0a0b0;
+  --glass: rgba(255, 255, 255, 0.04);
+  --border: rgba(255, 255, 255, 0.07);
+
+  /* Tipografías */
+  --font-mono: 'Space Mono', monospace;
+  --font-sans: 'Syne', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth
+}
+
+body {
+  background: var(--bg);
+  color: var(--txt);
+  font-family: 'Syne', sans-serif;
+  overflow-x: hidden
+}
+
+/* ── NOISE OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: .5;
+}
+
+/* ── LAYOUT PRINCIPAL ── */
+#app-section {
+  min-height: 100vh;
+  position: relative;
+  opacity: 0;
+}
+
+#app-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  flex: 1;
+  overflow: hidden
+}
+
+/* ── SECCIONES LATERALES ── */
+.left {
+  display: flex;
+  flex-direction: column;
+  padding: 22px 26px;
+  gap: 16px;
+  overflow: hidden;
+  border-right: 1px solid var(--border);
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg2)
+}
+
+/* ── COMPONENTES DE SCROLL PERSONALIZADOS ── */
+::-webkit-scrollbar {
+  width: 3px
+}
+
+::-webkit-scrollbar-track {
+  background: transparent
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg3);
+  border-radius: 2px
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--indigo)
+}
+
+/* ── RESPONSIVE MOBILE ── */
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+  }
+  
+  .left {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    min-height: 50vh;
+  }
+  
+  .right {
+    max-height: 40vh;
+  }
+  
+  .card {
+    width: 60px;
+    height: 70px;
+  }
+  
+  .card-val {
+    font-size: 20px;
+  }
+  
+  .h-right {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .array-input-wrap {
+    display: none;
+  }
+  
+  .hstats {
+    flex-wrap: wrap;
+  }
+}

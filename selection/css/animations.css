@@ -1,0 +1,55 @@
+/* ── animations.css: Core de Movimiento y Scroll ── */
+
+/* ── INTRO SECTION ── */
+#intro{
+  height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.intro-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(99,102,241,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(99,102,241,0.06) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black,transparent);
+}
+.intro-glow{
+  position:absolute;width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(99,102,241,0.15) 0%,transparent 70%);
+  pointer-events:none;
+}
+.intro-content{position:relative;z-index:1;text-align:center}
+.intro-tag{
+  font-family:'Space Mono',monospace;font-size:11px;letter-spacing:3px;
+  color:var(--cyan);text-transform:uppercase;margin-bottom:20px;
+  opacity:0;transform:translateY(20px);
+}
+.intro-title{
+  font-size:clamp(52px,8vw,96px);font-weight:800;line-height:0.95;letter-spacing:-3px;
+  margin-bottom:24px;opacity:0;transform:translateY(30px);
+}
+.intro-title span{
+  background:linear-gradient(135deg,var(--indigo),var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.intro-sub{
+  font-family:'Space Mono',monospace;font-size:13px;color:var(--muted);
+  max-width:480px;line-height:1.7;margin:0 auto 40px;
+  opacity:0;transform:translateY(20px);
+}
+.intro-badges{
+  display:flex;gap:10px;justify-content:center;flex-wrap:wrap;
+  opacity:0;transform:translateY(20px);
+}
+.badge{
+  font-family:'Space Mono',monospace;font-size:11px;padding:6px 14px;border-radius:4px;
+  border:1px solid;display:flex;align-items:center;gap:6px;
+}
+.badge-c{color:var(--cyan);border-color:rgba(0,242,255,0.3);background:rgba(0,242,255,0.05)}
+.badge-r{color:var(--rose);border-color:rgba(255,0,85,0.3);background:rgba(255,0,85,0.05)}
+.badge-i{color:var(--indigo);border-color:rgba(99,102,241,0.3);background:rgba(99,102,241,0.05)}
+.scroll-hint{
+  position:absolute;bottom:40px;left:50%;transform:translateX(-50%);
+  font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:2px;
+  display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;
+}
+.scroll-arrow{width:1px;height:40px;background:linear-gradient(var(--indigo),transparent);animation:sh 1.5s ease-in-out infinite}
+@keyframes sh{0%,100%{opacity:.3}50%{opacity:1}}
